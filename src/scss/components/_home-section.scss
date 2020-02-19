@@ -1,0 +1,121 @@
+.section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+
+    @media screen and (min-width: $medium-breakpoint) {
+        flex-direction: row;
+    }
+}
+
+.section__figure {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+
+    @media screen and (min-width: $medium-breakpoint) {
+        width: 50%;
+        text-align: right;
+    }
+
+    &__inner {
+
+        bottom: auto;
+
+
+        @media screen and (min-width: $medium-breakpoint) {
+            top: 55%;
+            /* padding: 1rem; */
+            bottom: auto;
+            /* position: absolute; */
+            top: 0;
+            right: 0;
+            width: 65%;
+            margin-left: 11vw;
+            margin-top: 11vh;
+        }
+    }
+
+    &__img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        z-index: -1;
+
+        @media screen and (min-width: $medium-breakpoint) {
+
+            height: 53%;
+            width: 82%;
+            overflow: hidden;
+            position: absolute;
+            margin-top: 21vh;
+            margin-left: 5vw;
+        }
+    }
+
+    &__title {
+
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1em;
+        color: transparent;
+        position: relative;
+
+
+        /* &::before {
+            position: absolute;
+            content: "";
+            display: inline-block;
+            top: 0;
+            left: 0;
+            height: 120%;
+            width: 25%;
+            background: white;
+
+
+        }*/
+        span {
+            display: inline-block;
+            -webkit-text-stroke: 2px $dark_grey;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+        }
+    }
+}
+
+.section__content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    @media screen and (min-width: $medium-breakpoint) {
+        width: 50%;
+    }
+
+    &__inner {
+        position: absolute;
+        top: 10%;
+
+        max-width: 350px;
+
+        @media screen and (min-width: $medium-breakpoint) {
+            top: 41%;
+        }
+    }
+
+    &__title {
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.3rem;
+        font-size: 2rem;
+
+    }
+
+    &__summary {}
+}
