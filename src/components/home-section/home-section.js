@@ -1,6 +1,6 @@
 
 import {
-    TimelineMax,
+    TimelineMax
 
 } from "gsap";
 import React, {Component} from 'react'
@@ -21,16 +21,18 @@ class HomeSection extends Component {
     }
     componentDidMount() {
         this.tl = new TimelineMax();
+
         this.tl
             .fromTo(this.figureImg, {
                 opacity:0,
 
                 visibility: 'hidden'
             }, {
-                duration:.5,
+                duration:.8,
                 opacity:1,
                 visibility:'visible'
             })
+            .addLabel("textFading", 1) // ajout d'un marqueur à 1sec comme repère pour l'animation du texte.
             .fromTo(this.titleLine1, {
                 transform: 'matrix(1,0,0,1,-50,0)',
                 opacity: 0
@@ -38,7 +40,7 @@ class HomeSection extends Component {
                 duration: .3,
                 transform: 'matrix(1,0,0,1,0,0)',
                 opacity: 1
-            })// Show titleLine1
+            }, "textFading")// Show titleLine1
             .fromTo(this.titleLine2, {
                 transform: 'matrix(1,0,0,1,-50,0)',
                 opacity: 0
@@ -55,30 +57,32 @@ class HomeSection extends Component {
                 transform: 'matrix(1,0,0,1,0,0)',
                 opacity: 1
             }) // Show titleLine3
+            .addLabel("contentText", 2)
+            // ajout d'un marqueur à 2sec comme repère pour l'animation du texte.
             .fromTo(this.contentTitle, {
                 transform: 'matrix(1,0,0,1,-50,0)',
                 opacity: 0
             }, {
-                duration: .3,
+                duration: .6,
                 transform: 'matrix(1,0,0,1,0,0)',
                 opacity: 1
-            }) // Show contentTitle
+            }, "contentText") // Show contentTitle
             .fromTo(this.contentSummary, {
                 transform: 'matrix(1,0,0,1,-50,0)',
                 opacity: 0
             }, {
-                duration: .3,
+                duration: .6,
                 transform: 'matrix(1,0,0,1,0,0)',
                 opacity: 1
-            }) // Show contentSummary
+            }, "contentText") // Show contentSummary
              .fromTo(this.contentLink, {
                  transform: 'matrix(1,0,0,1,-50,0)',
                  opacity: 0
              }, {
-                 duration: .3,
+                 duration: .6,
                  transform: 'matrix(1,0,0,1,0,0)',
                  opacity: 1
-             }) // Show contentLink
+             }, "contentText") // Show contentLink
 
     }
     render(){

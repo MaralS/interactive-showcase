@@ -139,16 +139,25 @@
     text-transform: uppercase;
     position: relative;
     overflow: hidden;
-    max-width: 200px;
+    max-width: 150px;
     padding-left: 0px;
-    transition: all ease-out .3s;
+    transition: all ease-in-out .3s;
 
-    &.focus,
-    &.hover {
+    &:focus,
+    &:hover {
         padding-left: 202px;
+
+        &::before {
+            visibility: visible;
+            opacity: 1;
+            left: 0px;
+            top: 0;
+
+        }
     }
 
     &::before {
+        transition: all ease-in-out .3s;
         content: 'Découvrir';
         display: block;
         visibility: hidden;
@@ -157,12 +166,7 @@
         top: 0;
         left: -202px;
 
-        &.hover {
-            visibility: visible;
-            opacity: 1;
-            left: 202px;
 
-        }
 
     }
 }
