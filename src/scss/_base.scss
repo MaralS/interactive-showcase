@@ -22,6 +22,27 @@ body {
     font-family: Urania, sans-serif;
 }
 
+em {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+strong {
+    font-weight: 600;
+}
+
+/*Linkedin icon */
+.social-icon {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 25px;
+    height: 25px;
+    margin: 15px;
+}
+
+
+
 /* CURSOR */
 html.no-touch {
     * {
