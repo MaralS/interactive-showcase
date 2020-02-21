@@ -14,6 +14,7 @@ class HomeSection extends Component {
         this.titleLine2 = null;
         this.titleLine3 = null;
 
+        this.figureContainer = null;
         this.figureImg = null;
         this.contentTitle = null;
         this.contentSummary = null;
@@ -23,16 +24,27 @@ class HomeSection extends Component {
         this.tl = new TimelineMax();
 
         this.tl
-            .fromTo(this.figureImg, {
-                opacity:0,
+            .addLabel("beginningTl", 0)
+            .addLabel ("beginAnim",.5)
+            .fromTo(this.figureContainer, {
+               // opacity:0,
+                width:'0%',
 
-                visibility: 'hidden'
+                //visibility: 'hidden'
             }, {
                 duration:.8,
+                width:'82%'
+               // opacity:1,
+               // visibility:'visible'
+            }, "beginAnim")
+           /* .fromTo(this.figureImg, {
+                opacity:0
+
+            }, {
                 opacity:1,
-                visibility:'visible'
-            })
-            .addLabel("textFading", 1) // ajout d'un marqueur à 1sec comme repère pour l'animation du texte.
+                duration:1
+            }, "beginningTl")*/
+            .addLabel("textFading", 1.5)
             .fromTo(this.titleLine1, {
                 transform: 'matrix(1,0,0,1,-50,0)',
                 opacity: 0
@@ -112,16 +124,16 @@ class HomeSection extends Component {
 
                             </h1>
                         </div>
-                        <figure className="section__figure__img" ref={figure => this.figureImg = figure}>
+                        <figure className="section__figure__img" ref={figure => this.figureContainer = figure}>
                             <img src={Creativity}
-                            alt = "Unsplash" />
+                            alt = "Unsplash"  ref={img => this.figureImg = img}/>
                         </figure>
 
                     </div>
 
                     <div className="section__content">
                         <div className="section__content__inner">
-                            <h2 className="section__content__title" ref={h2 => this.contentTitle = h2}>D'interface</h2>
+                            <h2 className="section__content__title" ref={h2 => this.contentTitle = h2}>passionnée</h2>
                             <p className="section__content__summary" ref={p => this.contentSummary = p}>Créative et aux multiples ressources, recherche un job dans une <strong>agence</strong> de communication <em>créative</em>.</p>
                             <p className="section__content__link" ref={p => this.contentLink = p}><a className="intro-link" href="http://maralsabbagh.fr" title="Site web actuel">Portfolio</a></p>
                             </div>

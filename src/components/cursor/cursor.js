@@ -14,7 +14,7 @@ class Cursor extends Component {
          this.cursor = React.createRef();
          this.follower = React.createRef();
 
-         this.cursorHoverElems = "a, button, .hamburger";
+         this.cursorHoverElems = "a, button, .clickable-area";
      }
     componentDidMount(){
  if (!isTouchDevice()) {
@@ -72,6 +72,7 @@ class Cursor extends Component {
     }
    render(){
        console.log("Cursor render")
+       console.log(this.cursorHoverElems)
        return(
             <div className="cursor">
         <div className="cursor__dot" ref={this.cursor} />

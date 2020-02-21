@@ -141,7 +141,7 @@
     overflow: hidden;
     max-width: 150px;
     padding-left: 0px;
-    transition: all ease-in-out .3s;
+    transition: all cubic-bezier(.3, .83, .3, 1) .4s;
 
     &:focus,
     &:hover {
@@ -157,7 +157,7 @@
     }
 
     &::before {
-        transition: all ease-in-out .3s;
+        transition: all cubic-bezier(.3, .83, .3, 1) .4s;
         content: 'Découvrir';
         display: block;
         visibility: hidden;
