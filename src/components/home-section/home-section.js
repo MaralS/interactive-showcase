@@ -1,6 +1,6 @@
 
 import {
-    TimelineMax
+    TimelineMax, Power2
 
 } from "gsap";
 import React, {Component} from 'react'
@@ -24,50 +24,55 @@ class HomeSection extends Component {
         this.tl = new TimelineMax();
 
         this.tl
-            .addLabel("beginningTl", 0)
-            .addLabel ("beginAnim",.5)
+            .delay(1)
+            .addLabel ("beginAnim",1)
             .fromTo(this.figureContainer, {
-               // opacity:0,
-                width:'0%',
-
-                //visibility: 'hidden'
+               transform:'matrix(1,0,0,1,-150,0)',
+               //border:'1px solid blue'
+               width:0
             }, {
-                duration:.8,
-                width:'82%'
-               // opacity:1,
-               // visibility:'visible'
+                duration:1.5,
+                transform: 'matrix(1,0,0,1,0,0)',
+                width:'50%',
+                ease: Power2.easeInOut
             }, "beginAnim")
-           /* .fromTo(this.figureImg, {
-                opacity:0
+           .fromTo(this.figureImg, {
+               marginLeft:'-35%'
 
             }, {
-                opacity:1,
-                duration:1
-            }, "beginningTl")*/
-            .addLabel("textFading", 1.5)
+
+                duration:1,
+                marginLeft:0,
+                ease: Power2.easeInOut
+            }, "beginAnim")
+            .addLabel("textFading",2.5)
             .fromTo(this.titleLine1, {
                 transform: 'matrix(1,0,0,1,-50,0)',
                 opacity: 0
             }, {
-                duration: .3,
+                duration: .4,
                 transform: 'matrix(1,0,0,1,0,0)',
-                opacity: 1
+                opacity: 1,
+                ease: Power2.easeOut
             }, "textFading")// Show titleLine1
             .fromTo(this.titleLine2, {
                 transform: 'matrix(1,0,0,1,-50,0)',
                 opacity: 0
             }, {
-                duration: .3,
+                duration: .4,
                 transform: 'matrix(1,0,0,1,0,0)',
-                opacity: 1
+                opacity: 1,
+                ease: Power2.easeOut
             }) //Show titleLine2
             .fromTo(this.titleLine3, {
                 transform: 'matrix(1,0,0,1,-50,0)',
-                opacity: 0
+                opacity: 0,
+                ease: Power2.easeOut
             }, {
-                duration: .3,
+                duration: .4,
                 transform: 'matrix(1,0,0,1,0,0)',
-                opacity: 1
+                opacity: 1,
+                ease: Power2.easeOut
             }) // Show titleLine3
             .addLabel("contentText", 2)
             // ajout d'un marqueur à 2sec comme repère pour l'animation du texte.
@@ -77,6 +82,7 @@ class HomeSection extends Component {
             }, {
                 duration: .6,
                 transform: 'matrix(1,0,0,1,0,0)',
+                ease: Power2.easeInOut,
                 opacity: 1
             }, "contentText") // Show contentTitle
             .fromTo(this.contentSummary, {
@@ -85,6 +91,7 @@ class HomeSection extends Component {
             }, {
                 duration: .6,
                 transform: 'matrix(1,0,0,1,0,0)',
+                ease: Power2.easeInOut,
                 opacity: 1
             }, "contentText") // Show contentSummary
              .fromTo(this.contentLink, {
@@ -93,6 +100,7 @@ class HomeSection extends Component {
              }, {
                  duration: .6,
                  transform: 'matrix(1,0,0,1,0,0)',
+                 ease: Power2.easeInOut,
                  opacity: 1
              }, "contentText") // Show contentLink
 
@@ -125,8 +133,11 @@ class HomeSection extends Component {
                             </h1>
                         </div>
                         <figure className="section__figure__img" ref={figure => this.figureContainer = figure}>
-                            <img src={Creativity}
-                            alt = "Unsplash"  ref={img => this.figureImg = img}/>
+
+
+                                <img src={Creativity} alt = "Unsplash"  ref={img => this.figureImg = img}/>
+
+
                         </figure>
 
                     </div>
