@@ -1,10 +1,10 @@
 
 import {
-    TimelineMax, Power2
+    TimelineMax, Power2, CSSPlugin
 
 } from "gsap";
 import React, {Component} from 'react'
-import Creativity from './creativity.jpg';
+import Creativity from '../assets/creativity.jpg';
 
 class HomeSection extends Component {
     constructor(props){
@@ -19,6 +19,7 @@ class HomeSection extends Component {
         this.contentTitle = null;
         this.contentSummary = null;
         this.contentLink = null;
+        this.imageReveal = null;
     }
     componentDidMount() {
         this.tl = new TimelineMax();
@@ -37,12 +38,12 @@ class HomeSection extends Component {
                 ease: Power2.easeInOut
             }, "beginAnim")
            .fromTo(this.figureImg, {
-               marginLeft:'-35%'
+               scale:1.6
 
             }, {
 
-                duration:1,
-                marginLeft:0,
+                duration:1.5,
+                scale:1,
                 ease: Power2.easeInOut
             }, "beginAnim")
             .addLabel("textFading",2.5)

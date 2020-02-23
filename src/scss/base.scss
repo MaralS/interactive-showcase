@@ -142,7 +142,7 @@ html.no-touch {
         justify-content: space-between;
         width: 9px;
         //border: 1px solid blue;
-        margin: 15px auto;
+        margin: 25px auto;
         height: 34px;
 
 
@@ -152,12 +152,12 @@ html.no-touch {
             transition: all ease-in .2s;
             display: block;
             justify-content: space-between;
-            border-radius: 50%;
+           // border-radius: 50%;
             width: 100%;
-            height: 5px;
+            height: 3px;
             margin-left: 0;
-            width: 5px;
-            background: $light_grey;
+            width: 3px;
+            background: $medium_grey;
         }
     }
 }

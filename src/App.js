@@ -1,9 +1,9 @@
 import React from 'react';
 import './scss/main.scss';
-import HomeSection from './components/home-section/home-section'
-import Cursor from './components/cursor/cursor'
+import HomeSection from './components/home-section'
+import Cursor from './components/cursor'
 import LinkedInIcon from './linkedin-icon.svg'
-import MenuIcon from './components/menu/menu-icon'
+import MenuIcon from './components/menu-icon'
 
 function App() {
   return (

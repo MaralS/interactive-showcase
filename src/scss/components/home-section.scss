@@ -16,6 +16,7 @@
     width: 100%;
     overflow: hidden;
 
+
     @media screen and (min-width: $medium-breakpoint) {
         width: 50%;
         text-align: right;
@@ -42,7 +43,17 @@
         width: auto;
         object-fit: cover;
         z-index: -1;
-        display:block;
+        display: block;
+
+        &:before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: block;
+            background: white;
+        }
 
         @media screen and (min-width: $medium-breakpoint) {
 
@@ -76,19 +87,6 @@
             margin-left: 43%
         }
 
-
-        /* &::before {
-            position: absolute;
-            content: "";
-            display: inline-block;
-            top: 0;
-            left: 0;
-            height: 120%;
-            width: 25%;
-            background: white;
-
-
-        }*/
         span {
             display: inline-block;
             -webkit-text-stroke: 2px $dark_grey;
@@ -133,47 +131,64 @@
 
 .intro-link {
     display: block;
+    position: relative;
+    overflow: hidden;
+    width: 200px;
+    padding-top:15px;
     letter-spacing: .4em;
     font-weight: 500;
     font-size: .7em;
     text-transform: uppercase;
-    position: relative;
-    overflow: hidden;
-    max-width: 150px;
-    padding-left: 0px;
-    transition: all cubic-bezier(.3, .83, .3, 1) .7s;
+    transition: all cubic-bezier(0.3, 0.83, 0.3, 1) 0.7s;
+
 
     &:focus,
     &:hover {
         padding-left: 202px;
-
         &::before {
             visibility: visible;
             opacity: 1;
             left: 0px;
             top: 0;
+        }
+        &::after {
+            width: 125px;
 
         }
     }
 
     &::before {
-        transition: all cubic-bezier(.3, .83, .3, 1) .7s;
-        content: 'Découvrir';
+
         display: block;
-        visibility: hidden;
-        opacity: 0;
         position: absolute;
         top: 0;
-        left: -202px;
+        left: -200px;
+        width: 200px;
+        visibility: hidden;
+        opacity: 0;
+        padding-top:15px;
+        transition: all cubic-bezier(0.3, 0.83, 0.3, 1) 0.7s;
+        content: 'Découvrir';
 
+    }
 
+    &::after {
 
+        display: block;
+        width: 200px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 2px;
+        background: $light_grey;
+        transition: all cubic-bezier(0.3, 0.83, 0.3, 1) 0.7s;
+        content: '';
     }
 }
 
 /* MASK */
 .inner_mask {
-        overflow: hidden;
-        will-change: transform;
+    overflow: hidden;
+    will-change: transform;
 
 }
