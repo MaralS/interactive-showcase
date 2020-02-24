@@ -1,19 +1,12 @@
-
-import {
-    gsap,
-
-} from "gsap";
+import {gsap} from "gsap";
 import React, {Component} from 'react'
 
 class Cursor extends Component {
      constructor(props) {
          super(props);
-
          this.mouseIsHover = false;
-
          this.cursor = React.createRef();
          this.follower = React.createRef();
-
          this.cursorHoverElems = "a, button, .clickable-area";
      }
     componentDidMount(){
@@ -71,8 +64,6 @@ class Cursor extends Component {
 
     }
    render(){
-       console.log("Cursor render")
-       console.log(this.cursorHoverElems)
        return(
             <div className="cursor">
         <div className="cursor__dot" ref={this.cursor} />

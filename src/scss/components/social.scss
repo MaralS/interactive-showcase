@@ -1,0 +1,16 @@
+/*Linkedin icon */
+.social-icon {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 25px;
+    height: 25px;
+    margin: 15px;
+    opacity: .5;
+    transition: all ease-out .2s;
+
+    &:hover {
+        opacity: 1;
+    }
+}

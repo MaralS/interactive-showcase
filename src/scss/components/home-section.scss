@@ -44,15 +44,24 @@
         object-fit: cover;
         z-index: -1;
         display: block;
+        overflow: hidden;
 
-        &:before {
+        >img {
+            transform: scale(1.6);
+        }
+
+
+
+        &::after {
             position: absolute;
-            top: 0;
-            left: 0;
+            content: "";
+            width: 0;
             width: 100%;
             height: 100%;
-            display: block;
             background: white;
+            top: 0;
+            right: 0;
+            display: block;
         }
 
         @media screen and (min-width: $medium-breakpoint) {
@@ -75,12 +84,21 @@
         position: relative;
         text-align: left;
 
+        &__line-1,
+        &__line-2,
+        &__line-3 {
+            transform: matrix(1, 0, 0, 1, -50, 0);
+            opacity: 0;
+        }
+
         &__line-1 {
-            margin-left: 0
+            margin-left: 0;
+
         }
 
         &__line-2 {
             margin-left: 25%;
+
         }
 
         &__line-3 {
@@ -122,6 +140,14 @@
         letter-spacing: 0.3rem;
         font-size: 2rem;
 
+
+    }
+
+    &__title,
+    &__summary,
+    &__link {
+        transform: matrix(1, 0, 0, 1, -50, 0);
+        opacity: 0;
     }
 
 
@@ -134,7 +160,7 @@
     position: relative;
     overflow: hidden;
     width: 200px;
-    padding-top:15px;
+    padding-top: 15px;
     letter-spacing: .4em;
     font-weight: 500;
     font-size: .7em;
@@ -145,12 +171,14 @@
     &:focus,
     &:hover {
         padding-left: 202px;
+
         &::before {
             visibility: visible;
             opacity: 1;
             left: 0px;
             top: 0;
         }
+
         &::after {
             width: 125px;
 
@@ -166,7 +194,7 @@
         width: 200px;
         visibility: hidden;
         opacity: 0;
-        padding-top:15px;
+        padding-top: 15px;
         transition: all cubic-bezier(0.3, 0.83, 0.3, 1) 0.7s;
         content: 'Découvrir';
 

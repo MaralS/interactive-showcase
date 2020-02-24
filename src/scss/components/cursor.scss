@@ -1,0 +1,58 @@
+/* CURSOR */
+html.no-touch {
+    * {
+        cursor: none !important;
+        visibility: visible;
+    }
+}
+
+.cursor {
+    visibility: hidden;
+
+    &__dot {
+        position: fixed;
+        top: -4px;
+        left: -4px;
+        width: 8px;
+        height: 8px;
+        pointer-events: none;
+        mix-blend-mode: difference;
+        transform: scale(1);
+        background: $dark_grey;
+        border-radius: 50%;
+        z-index: 100;
+
+        &.active {
+            opacity: 0.5;
+            transform: scale(0);
+        }
+
+        &.hovered {
+            opacity: 0.08;
+        }
+    }
+
+    &__circle {
+        position: fixed;
+        top: -15px;
+        left: -15px;
+        width: 30px;
+        height: 30px;
+        pointer-events: none;
+        border-radius: 60%;
+        border: 1px solid $medium_grey;
+        mix-blend-mode: difference;
+        z-index: 90;
+
+        &.active {
+            opacity: 0.7;
+            transform: scale(3);
+
+        }
+
+        &.hovered {
+            opacity: 0.08;
+        }
+    }
+
+}
