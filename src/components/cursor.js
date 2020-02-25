@@ -7,7 +7,7 @@ class Cursor extends Component {
          this.mouseIsHover = false;
          this.cursor = React.createRef();
          this.follower = React.createRef();
-         this.cursorHoverElems = "a, button, .clickable-area";
+         this.cursorHoverElems = "a, button, .clickable";
      }
     componentDidMount(){
  if (!isTouchDevice()) {

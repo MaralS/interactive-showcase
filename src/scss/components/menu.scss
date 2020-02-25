@@ -1,6 +1,6 @@
 /* MENU */
 .menu {
-    &.clickable-area {
+    &__icon {
 
         //border: 1px dashed darksalmon;
         width: 50px;
@@ -8,7 +8,28 @@
         position: absolute;
         top: 0;
         right: 0;
-        z-index: 30; // pour que la div puisse passer au dessus de celle de .showcase__container et qu'elle puisse être détectée par le curseur.
+        z-index: 50; // pour que la div puisse passer au dessus de celle de .showcase__container et qu'elle puisse être détectée par le curseur.
+
+        .dots {
+
+            display: flex;
+            flex-flow: column;
+            justify-content: space-between;
+            width: 9px;
+            margin: 25px auto;
+            height: 34px;
+
+            .dot {
+                transition: all ease-in .2s;
+                display: block;
+                justify-content: space-between;
+                width: 100%;
+                height: 3px;
+                margin-left: 0;
+                width: 3px;
+                background: $medium_grey;
+            }
+        }
 
 
         &:hover,
@@ -20,29 +41,41 @@
         }
     }
 
-    &__icon {
-
+    &__links {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        margin: 0;
+        width: 100%;
+        padding: 17% 13%;
+        text-align: left;
+        z-index: 45;
+        transform: translate(0,-100%);
+        background:white;
         display: flex;
-        flex-flow: column;
+        flex-direction: column;
         justify-content: space-between;
-        width: 9px;
-        //border: 1px solid blue;
-        margin: 25px auto;
-        height: 34px;
+
+        li {
+
+            height: 19%;
+            text-transform: uppercase;
+
+            a {
 
 
+                height: 100%;
+                border: 1px solid blue;
+                margin: 0;
+                letter-spacing: .4em;
+                font-weight: 500;
+                font-size: 1rem;
 
 
-        .dot {
-            transition: all ease-in .2s;
-            display: block;
-            justify-content: space-between;
-            // border-radius: 50%;
-            width: 100%;
-            height: 3px;
-            margin-left: 0;
-            width: 3px;
-            background: $medium_grey;
+            }
         }
     }
+
+
 }

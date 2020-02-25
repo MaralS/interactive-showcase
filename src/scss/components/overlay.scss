@@ -30,6 +30,7 @@
 
         &::after {
             position: absolute;
+            z-index:100;
             content: "";
             display: block;
             bottom: 0;

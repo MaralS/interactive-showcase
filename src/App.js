@@ -1,13 +1,13 @@
-import React, {useRef, useEffect} from 'react';
+import React, {useEffect} from 'react';
+import {TimelineMax, Power2} from "gsap";
+import CSSRulePlugin from 'gsap/CSSRulePlugin'
+//components and SCSS
 import './scss/main.scss';
 import HomeSection from './components/home-section'
 import Cursor from './components/cursor'
-import LinkedInIcon from './linkedin-icon.svg'
-import MenuIcon from './components/menu-icon'
-import {TimelineMax, Power2} from "gsap";
-import CSSRulePlugin from 'gsap/CSSRulePlugin'
 import Overlay from './components/overlay'
-
+import Menu from './components/menu'
+import Social from './components/social'
 function App() {
   //Overlay
   let overlayLeft = CSSRulePlugin.getRule('.overlay__left:after');
@@ -27,12 +27,13 @@ function App() {
       }) //en attendant de faire un overlay dédié.*/
       .to(overlayLeft, 1.5, {
           height: '0%',
+
           ease: Power2.easeInOut
         })
         .to(overlayRight, 1.5, {
           height: '0%',
-          ease: Power2.easeInOut,
-          delay: -0.8
+
+          ease: Power2.easeInOut
         })
       .to(imageReveal, 1.5, {
         width: '0%',
@@ -83,12 +84,11 @@ function App() {
   return (
 
        <div className="showcase__container">
-
-        <MenuIcon />
-        <HomeSection />
-        <Cursor />
-        <a className="social-icon linkedin" href="https://www.linkedin.com/in/maralsabbagh/" title="Restons connectés"><img  src={LinkedInIcon} alt="LinkedIn" /></a>
         <Overlay/>
+        <Cursor />
+        <Menu />
+        <HomeSection />
+        <Social />
       </div>
 
 

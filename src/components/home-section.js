@@ -30,12 +30,11 @@ const HomeSection = () => {
                                 <img src={Creativity} alt = "Unsplash"/>
                         </figure>
                     </div>
-
                     <div className="section__content">
                         <div className="section__content__inner">
                             <h2 className="section__content__title">passionnée</h2>
                             <p className="section__content__summary">Créative et aux multiples ressources, recherche un job dans une <strong>agence</strong> de communication <em>créative</em>.</p>
-                            <p className="section__content__link" ><a className="intro-link" href="http://maralsabbagh.fr" title="Site web actuel">Portfolio</a></p>
+                            <p className="section__content__link" ><a className="intro-link" href="/" title="Site web actuel">Portfolio</a></p>
                             </div>
                     </div>
                 </section>
