@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Overlay = () => {
+const IntroOverlay = () => {
     return(
          <div className="overlay__container">
                 <div className="overlay__left"></div>
@@ -10,4 +10,4 @@ const Overlay = () => {
     );
 };
 
-export default Overlay;
+export default IntroOverlay;

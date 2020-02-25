@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {TimelineMax, Power4} from 'gsap'
+import {TimelineMax, Power2} from 'gsap'
 import CSSRulePlugin from 'gsap/CSSRulePlugin'
 const datas = [
      {
@@ -10,7 +10,7 @@ const datas = [
      },
      {
          label: 'A propos',
-         href: '/a-propos',
+         href: '/about',
          title:'Mon parcours'
 
      },
@@ -50,14 +50,16 @@ class Menu extends Component {
            // CLOSE THE MENU
            this.tl.to(this.menuReveal, 1.2, {
                transform: 'translate(0,-100%)',
+               display:'none',
 
-               ease: Power4.easeInOut
+               ease: Power2.easeInOut
            })
        }else{
            // open the menu
             this.tl.to(this.menuReveal, 1.2, {
                 transform: 'translate(0,0)',
-                ease: Power4.easeInOut
+                display:'flex',
+                ease: Power2.easeInOut
             })
 
        }
