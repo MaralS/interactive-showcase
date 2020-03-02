@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import {TimelineMax, Power2} from 'gsap'
-import CSSRulePlugin from 'gsap/CSSRulePlugin'
 const datas = [
      {
          label: 'projets',
@@ -40,26 +39,23 @@ class Menu extends Component {
     componentDidMount(){
         this.tl = new TimelineMax();
 
-
     }
    toggleMenu(){
        this.setState({visible: !this.state.visible})
-
-
-       if(this.state.visible == true) {
+       if(this.state.visible === true) {
            // CLOSE THE MENU
-           this.tl.to(this.menuReveal, 1.2, {
+           this.tl.to(this.menuReveal, 1.5, {
                transform: 'translate(0,-100%)',
                display:'none',
 
-               ease: Power2.easeInOut
+               ease: Power2.easeOut
            })
        }else{
            // open the menu
-            this.tl.to(this.menuReveal, 1.2, {
+            this.tl.to(this.menuReveal, 1.5, {
                 transform: 'translate(0,0)',
                 display:'flex',
-                ease: Power2.easeInOut
+                ease: Power2.easeOut
             })
 
        }

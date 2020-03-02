@@ -1,9 +1,9 @@
-import React, {useEffect} from 'react';
+import React /*, {useEffect}*/ from 'react';
 /*
 import {TimelineMax, Power2} from "gsap";
 import CSSRulePlugin from 'gsap/CSSRulePlugin'*/
 
-const About = () => {
+const About = ({dimensions}) => {
     return(
         <>
         <h1>Content of the About Page</h1>

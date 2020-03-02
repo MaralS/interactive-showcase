@@ -1,16 +1,63 @@
-/*Linkedin icon */
-.social-icon {
-    display: block;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 25px;
-    height: 25px;
-    margin: 15px;
-    opacity: .5;
-    transition: all ease-out .2s;
+.social {
+    &__container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        position: absolute;
 
-    &:hover {
-        opacity: 1;
+        @media #{$xsmall-only} {
+            bottom: 3vh;
+            /* center la div au centre */
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 45;
+            width: 40%;
+            margin: 0 auto;
+
+        }
+        @media #{$small-only}{
+            width: 120px;
+            height: 25px;
+            margin: 0 30px 30px 0;
+            right: 0;
+            bottom:0;
+        }
+
+
+        @media #{$medium-up} {
+
+            width: 120px;
+            height: 25px;
+            margin: 0 30px 30px 0;
+            right: 0;
+            bottom:0;
+
+
+
+        }
+
+
+
+
+    }
+
+    &__icon {
+        display: block;
+        margin: 0;
+        opacity: .5;
+        transition: all ease-out .2s;
+
+        >img {
+            width: 25px;
+            height: 25px;
+            //border: 1px solid red;
+
+        }
+
+        &:hover,
+        &:focus {
+            opacity: 1;
+        }
+
     }
 }

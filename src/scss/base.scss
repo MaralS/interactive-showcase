@@ -5,7 +5,10 @@ $light_grey:#d8dad9;
 
 /* TYPOGRAPHY */
 
-
+* {
+    margin: 0;
+    padding: 0;
+}
 
 @font-face {
     font-family: 'Urania';
@@ -20,6 +23,11 @@ $light_grey:#d8dad9;
 
 body {
     font-family: Urania, sans-serif;
+    user-select: none;
+    background: white;
+    overscroll-behavior: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 em {
