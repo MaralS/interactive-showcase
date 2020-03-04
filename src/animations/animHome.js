@@ -27,7 +27,8 @@ export const animSectionContent = () => {
 var tl = new TimelineMax();
     tl.to('.section__content__inner', .7, {
         opacity: 1,
-        transform: 'matrix(1,0,0,1,0,0)',
+
+         top: '50%',
         ease: Power2.easeInOut
     })
 }

@@ -3,15 +3,15 @@
     &__container {
         position: absolute;
         display: flex;
-        flex-direction: column;
+
         height: 100vh;
         width: 100vw;
         top: 0;
         left: 0;
+        flex-direction: row;
 
-
-        @media screen and (min-width: $medium-breakpoint) {
-            flex-direction: row;
+        @include respond-to(small-only, portrait) {
+            flex-direction: column;
         }
     }
 
@@ -20,12 +20,13 @@
     &__left {
 
         position: relative;
-        width: 100%;
+
         overflow: hidden;
         height: 100%;
+        width: 50%;
 
-        @media screen and (min-width: $medium-breakpoint) {
-            width: 50%;
+        @include respond-to(small-only, portrait) {
+            width: 100%;
 
         }
 
@@ -41,18 +42,22 @@
 
         }
     }
+
     &__left {
         &::after {
-            background:lighten($light_grey, 7%);
+            background: lighten($light_grey, 7%);
         }
     }
-        &__right{
-            display:none;
-            @media screen  and (min-width: $medium-breakpoint) {
-                display:block;
-            }
-            &::after{
-                background:lighten($light_grey, 7%);
-            }
+
+    &__right {
+        display: block;
+
+        @include respond-to(small-only, portrait) {
+            display: none;
         }
+
+        &::after {
+            background: lighten($light_grey, 7%);
+        }
+    }
 }

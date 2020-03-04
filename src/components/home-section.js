@@ -7,8 +7,7 @@ const HomeSection = () => {
     return(
          <section className = "section__container">
                     <div className="section__figure">
-                            <div className="section__figure__title__outer">
-                                <div className="section__figure__title__inner">
+
                                     <h2 className="section__figure__title fill">
                                         <div className="section__figure__title__line-1">
                                             <span>d</span>
@@ -25,6 +24,9 @@ const HomeSection = () => {
                                             <span>r</span>
                                     </div>
                                 </h2>
+                                 <figure className="section__figure__img">
+                                    <img src={Profil} alt="Avatar"/>
+                                </figure>
                                     <h2 className="section__figure__title nofill">
                                 <div className="section__figure__title__line-1">
                                     <span>d</span>
@@ -42,11 +44,8 @@ const HomeSection = () => {
                                 </div>
                             </h2>
 
-                                </div>
-                            </div>
-                            <figure className="section__figure__img">
-                                <img src={Profil} alt="Avatar"/>
-                            </figure>
+
+
                         </div>
 
 
