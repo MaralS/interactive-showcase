@@ -12,6 +12,7 @@ export const animOverlay = () => {
     var tl = new TimelineMax();
     tl.fromTo(overlayLeft, {height:'100%'}, {duration: 1.8,height:'0%', ease: Power2.easeInOut, delay:0.8 } )
     .fromTo(overlayRight, {height:'100%'}, {duration: 1.8,height:'0%', ease: Power2.easeInOut}, '-=1.6')
+    .to('.overlay__container', 0, {display:'none'})
 
 }
 export const animSectionFigure = () => {

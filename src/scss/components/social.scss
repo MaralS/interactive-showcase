@@ -11,13 +11,12 @@
         bottom:0;
 
         @include respond-to(small-only, both){
-            bottom: 3vh;
+            bottom: 2%;
             /* center la div au centre */
             left: 50%;
-            transform: translateX(-50%);
+            transform: translate(-50%,-2%);
             z-index: 45;
             width: 40%;
-            margin: 0 auto;
 
         }
 

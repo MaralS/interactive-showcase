@@ -26,6 +26,16 @@ body {
     overscroll-behavior: none;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+
+}
+.showcase
+{
+    &__container{
+
+        // Corriger le bug de la hauteur du viewport
+        height: calc(var(--vh, 1vh) * 100);
+       // border:3px solid green;
+    }
 }
 
 em {
@@ -107,6 +117,3 @@ blockquote {
     margin: 0
 }
 
-.bold {
-    font-weight: bold;
-}

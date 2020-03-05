@@ -3,14 +3,14 @@
         position: relative;
         display: flex;
         flex-direction: row;
-        height: 100vh;
-        width: 100vw;
-
+        height: 100%;
+        width: 100%;
         @include respond-to(small-only, portrait) {
             flex-direction: column;
-
         }
-
+         @include respond-to(small-only, both) {
+             height:90%;
+         }
 
     }
 
@@ -124,7 +124,7 @@
 
                 -webkit-text-fill-color: transparent;
                 color: transparent;
-                -webkit-text-stroke: 2px black;
+                -webkit-text-stroke: 0.065rem black;
                 z-index: 2;
 
             }
@@ -236,16 +236,23 @@
                 &:focus,
                 &:hover {
                     padding-left: 250px;
+                      @include respond-to(small-only, both) {
+                           padding-left: 0;
+                      }
+
 
                     &::before {
                         visibility: visible;
                         opacity: 1;
                         left: 0px;
                         top: 0;
+
                     }
 
                     &::after {
                         width: 70px;
+
+
 
                     }
                 }
@@ -253,6 +260,9 @@
                 &::before {
 
                     display: block;
+                     @include respond-to(small-only, both) {
+                         display: none;
+                     }
                     position: absolute;
                     top: 0;
                     left: -250px;
@@ -268,6 +278,7 @@
                 &::after {
 
                     display: block;
+
                     width: 155px;
                     position: absolute;
                     top: 0;

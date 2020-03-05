@@ -5,8 +5,6 @@ import { Route } from "react-router-dom";
 import './scss/main.scss';
 
 import Cursor from './components/cursor'
-
-import Menu from './components/menu'
 import Social from './components/social'
 // import Pages
 import Home from './pages/home'
@@ -20,6 +18,7 @@ const routes = [
   { path: "/portfolio", name: "Portfolio", Component: Portfolio },
   { path: "/about", name: "about", Component: About }
 ];
+/*
 function debounce(fn, ms) {
   let timer;
   return () => {
@@ -30,18 +29,18 @@ function debounce(fn, ms) {
     }, ms);
   };
 }
-
+*/
 function App() {
 
-  const [dimensions, setDimensions] = React.useState({
+ /* const [dimensions, setDimensions] = React.useState({
     height: window.innerHeight,
     width: window.innerWidth
-  });
+  });*/
 
   useEffect(()=>{
     // prevents flashing
       gsap.to("body", 0, { css: { visibility: "visible" } });
-      const debouncedHandleResize = debounce(function handleResize() {
+     /* const debouncedHandleResize = debounce(function handleResize() {
         setDimensions({
           height: window.innerHeight,
           width: window.innerWidth
@@ -51,17 +50,25 @@ function App() {
       window.addEventListener("resize", debouncedHandleResize);
       return () => {
         window.removeEventListener("resize", debouncedHandleResize);
-      };
+      };*/
+
+      // We listen to the resize event
+      window.addEventListener('resize', () => {
+        // We execute the same script as before
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+      });
 
   })
 
   return (
        <div className="showcase__container">
         <Cursor />
-        {/*<Menu />*/}
+
                {routes.map(({ path, Component }) => (
                 <Route key={path} exact path={path}>
-                  <Component dimensions={dimensions} />
+                  <Component   />
+
                 </Route>
               ))}
         <Social />
