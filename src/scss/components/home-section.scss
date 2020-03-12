@@ -51,14 +51,11 @@
             }
 
             @include respond-to(small-only, portrait) {
-                bottom: -6%;
-                left: 0;
+                top:95%;
+                left:50%;
+                transform: translate(-50%, -95%);
 
-                top: inherit;
-                height: 65%;
-                margin-top: 0;
-                width: auto;
-                transform: translate(0, 6%);
+
             }
 
             >img {
@@ -67,13 +64,7 @@
                 height: auto;
                 margin-top: 0;
 
-                @include respond-to(small-only, portrait) {
-                    margin-top: 0;
-                    margin-left: -10%;
-                    width: auto;
-                    height: 110%;
 
-                }
             }
 
         }
