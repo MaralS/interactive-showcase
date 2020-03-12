@@ -5,8 +5,6 @@ import { Route } from "react-router-dom";
 import './scss/main.scss';
 
 import Cursor from './components/cursor'
-
-import Menu from './components/menu'
 import Social from './components/social'
 // import Pages
 import Home from './pages/home'
@@ -20,48 +18,79 @@ const routes = [
   { path: "/portfolio", name: "Portfolio", Component: Portfolio },
   { path: "/about", name: "about", Component: About }
 ];
-function debounce(fn, ms) {
-  let timer;
-  return () => {
-    clearTimeout(timer);
-    timer = setTimeout(() => {
-      timer = null;
-      fn.apply(this, arguments);
-    }, ms);
-  };
-}
 
 function App() {
-
-  const [dimensions, setDimensions] = React.useState({
-    height: window.innerHeight,
-    width: window.innerWidth
+useEffect(() => {
+  // prevents flashing
+  gsap.to("body", 0, {
+    css: {
+      visibility: "visible"
+    }
   });
+  var showcaseContainer = document.getElementsByClassName('showcase__container')[0];
 
-  useEffect(()=>{
-    // prevents flashing
-      gsap.to("body", 0, { css: { visibility: "visible" } });
-      const debouncedHandleResize = debounce(function handleResize() {
-        setDimensions({
-          height: window.innerHeight,
-          width: window.innerWidth
-        });
-      }, 1000);
+  window.addEventListener('load', () => {
+    if (window.innerHeight <= 650) {
+      console.log('Hauteur inférieure ou égale à 650px')
 
-      window.addEventListener("resize", debouncedHandleResize);
-      return () => {
-        window.removeEventListener("resize", debouncedHandleResize);
-      };
+      showcaseContainer.classList.add('xsmall-vh')
+
+    } else {
+      console.log("Hauteur suffisamment grande. Pas besoin d'ajouter la classe xsmall-vh")
+
+    }
 
   })
+
+  var previousOrientation = window.orientation;
+  var checkOrientation = function () {
+    if (window.orientation !== previousOrientation) {
+      previousOrientation = window.orientation;
+      // orientation changed, do your magic here
+      console.log('Changement orientation')
+
+
+    }
+  };
+
+  window.addEventListener("resize", checkOrientation => {
+    // We execute the same script as before
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+     if (window.innerHeight > window.innerWidth) {
+       console.log("Mode portrait");
+       if (window.innerHeight < 650) {
+         console.log("Add xsmall-vh class ")
+         showcaseContainer.classList.add('xsmall-vh')
+       } else {
+         console.log("Delete sxmall-vh class")
+         showcaseContainer.classList.remove('xsmall-vh')
+       }
+
+     } else {
+       console.log("Mode paysage");
+       showcaseContainer.classList.remove('xsmall-vh')
+     }
+
+  });
+  window.addEventListener("orientationchange", checkOrientation, false);
+
+  // (optional) Android doesn't always fire orientationChange on 180 degree turns
+  setInterval(checkOrientation, 2000);
+
+
+
+})
 
   return (
        <div className="showcase__container">
         <Cursor />
-        {/*<Menu />*/}
+
                {routes.map(({ path, Component }) => (
                 <Route key={path} exact path={path}>
-                  <Component dimensions={dimensions} />
+                  <Component   />
+
                 </Route>
               ))}
         <Social />

@@ -1,9 +1,9 @@
-/* COLORS */
+// COULEURS
 $medium_grey: #656b6f;
 $dark_grey: #3b3d40;
 $light_grey:#d8dad9;
 
-/* TYPOGRAPHY */
+// TYPOGRAPHIE
 
 * {
     margin: 0;
@@ -11,12 +11,10 @@ $light_grey:#d8dad9;
 }
 
 @font-face {
-    font-family: 'Urania';
+    font-family: 'Urania', Arial, Helvetica, sans-serif;
     src: url('../assets/font/Hoftype-Urania_Ultra.otf') format('otf'),
         url('../assets/font/Hoftype-Urania_Bold.otf') format('otf'),
         url('../assets/font/Hoftype-Urania_Light.otf') format('otf');
-
-
     font-weight: normal;
     font-style: normal;
 }
@@ -28,6 +26,16 @@ body {
     overscroll-behavior: none;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+
+}
+.showcase
+{
+    &__container{
+
+        // Corriger le bug de la hauteur du viewport
+        height: calc(var(--vh, 1vh) * 100);
+       // border:3px solid green;
+    }
 }
 
 em {
@@ -45,31 +53,9 @@ h1 p {
     font-weight: 800;
     word-wrap: break-word;
 
-    @media #{$medium-up} {
-        font-size: 2.5rem;
-        line-height: 1.125em;
-    }
 
-    @media #{$large-up} {
-        font-size: 3.5rem;
-        line-height: 1.25em;
-    }
-
-    @media #{$xxlarge-up} {
-        font-size: 4.25rem;
-    }
 }
 
-h1,
-h2 {
-    small {
-        display: block;
-        text-transform: uppercase;
-        font-size: .9rem;
-        letter-spacing: .0625rem;
-        font-weight: 400;
-    }
-}
 
 h2 {
     font-size: 1.75rem;
@@ -77,13 +63,6 @@ h2 {
     word-wrap: break-word;
     margin: 0 0 1rem;
 
-    small {
-        @media #{$large-up} {
-            font-size: 2.25rem;
-            line-height: 1.25em;
-        }
-
-    }
 
 
 }
@@ -93,14 +72,7 @@ h3 {
     line-height: 1.15em;
     word-wrap: break-word;
 
-    @media #{$medium-up} {
-        font-size: 1.5rem;
-        line-height: 1.25em;
-    }
 
-    @media #{$large-up} {
-        font-size: 1.75rem;
-    }
 }
 
 h4 {
@@ -145,6 +117,3 @@ blockquote {
     margin: 0
 }
 
-.bold {
-    font-weight: bold;
-}
