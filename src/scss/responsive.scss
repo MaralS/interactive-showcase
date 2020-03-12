@@ -1,6 +1,4 @@
-
 $small-breakpoint : 735px !default;
-
 $large-breakpoint : 75em !default;
 
 /* Params
@@ -14,29 +12,25 @@ $large-breakpoint : 75em !default;
             @content;
         }
     }
-      @if $media==small-only and $orientation==landscape {
+    @if $media==small-only and $orientation==landscape {
           @media only screen and (max-width: $small-breakpoint) and (orientation:landscape) {
               @content;
           }
-      }
-      @if $media==small-only and $orientation==both {
+    }
+    @if $media==small-only and $orientation==both {
           @media only screen and (max-width: $small-breakpoint)  {
               @content;
           }
-      }
-
+    }
     @if $media==medium-only and $orientation== portrait and $orientation==landscape or $orientation==both {
         @media only screen and (min-width:$small-breakpoint +1) and (max-width:$large-breakpoint -1) {
             @content;
         }
     }
-
     @if $media==large-up and $orientation==portrait and $orientation==landscape and $orientation==both {
         @media only screen and (min-width: $large-breakpoint +1) {
             @content;
         }
     }
-
-
 }
 
