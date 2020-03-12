@@ -70,6 +70,7 @@ useEffect(() => {
 
      } else {
        console.log("Mode paysage");
+       showcaseContainer.classList.remove('xsmall-vh')
      }
 
   });
