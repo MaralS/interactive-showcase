@@ -1,0 +1,10 @@
+.about{
+    &__inner {
+        width:55vw;
+        margin:0 auto;
+        @include respond-to(small-only, both){
+            width:65vw
+        }
+    }
+
+}

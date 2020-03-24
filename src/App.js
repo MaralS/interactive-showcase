@@ -39,6 +39,8 @@ useEffect(() => {
       console.log("Hauteur suffisamment grande. Pas besoin d'ajouter la classe xsmall-vh")
 
     }
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
 
   })
 
@@ -93,7 +95,10 @@ useEffect(() => {
 
                 </Route>
               ))}
-        <Social />
+
+
+              {(window.location.pathname != '/') ? null : <Social />}
+
       </div>
   );
 }
