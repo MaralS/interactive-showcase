@@ -89,15 +89,16 @@ useEffect(() => {
        <div className="showcase__container">
         <Cursor />
 
-               {routes.map(({ path, Component }) => (
+              {routes.map(({ path, Component }) => (
                 <Route key={path} exact path={path}>
                   <Component   />
 
                 </Route>
               ))}
 
-
-              {(window.location.pathname != '/') ? null : <Social />}
+              { // Réseaux sociaux visibles uniquement en page d'accueil
+              (window.location.pathname !== '/') ? null : <Social />
+              }
 
       </div>
   );
